@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mi Primer Sitio Web</title>
+    <!--
+        Aquí definimos los estilos para nuestra página web.
+        Los selectores (body, h1, p) apuntan a las etiquetas de HTML,
+        y las propiedades (font-family, color, etc.) les dan estilo.
+    -->
+    <style>
+        body {
+            /* Establece una fuente legible y un color de fondo agradable */
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            color: #333;
+            line-height: 1.6;
+            margin: 0;
+            padding: 20px;
+        }
+
+        h1 {
+            /* Estilo para el título principal */
+            color: #2c3e50;
+            text-align: center;
+        }
+
+        p {
+            /* Estilo para los párrafos */
+            font-size: 1.1em;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+
+    <!--
+        Esta es la estructura HTML de nuestra página.
+        Se compone de etiquetas que definen el contenido.
+    -->
+    <h1>¡Hola Mundo!</h1>
+    <p id="parrafoPrincipal">
+        Esta es mi primera página web. Estoy aprendiendo a usar HTML para la estructura
+        y CSS para el estilo. ¡Es un camino muy emocionante!
+    </p>
+    <button id="cambiarTextoBtn">Modifica texto del parrago</button>
+
+    <script>
+        const boton = document.getElementById('cambiarTextoBtn');
+        const parrafo = document.getElementById('parrafoPrincipal');
+
+        boton.addEventListener('click', ()=>{
+            parrafo.textContent= "¡Has cambiado el texto con JavaScript! ¡Es increíble la magia del DOM!";
+        });
+
+    </script>
+</body>
+</html>
