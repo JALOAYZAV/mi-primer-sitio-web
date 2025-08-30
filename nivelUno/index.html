@@ -13,8 +13,7 @@
         body {
             /* Establece una fuente legible y un color de fondo agradable */
             font-family: Arial, sans-serif;
-            background-color: #f4f4f4;
-            color: #333;
+            background-color: #dce562;
             line-height: 1.6;
             margin: 0;
             padding: 20px;
@@ -22,6 +21,7 @@
 
         h1 {
             /* Estilo para el título principal */
+            
             color: #2c3e50;
             text-align: center;
         }
@@ -30,6 +30,10 @@
             /* Estilo para los párrafos */
             font-size: 1.1em;
             text-align: center;
+            font-style: italic;
+            color: blue;
+
+
         }
     </style>
 </head>
@@ -39,19 +43,53 @@
         Esta es la estructura HTML de nuestra página.
         Se compone de etiquetas que definen el contenido.
     -->
-    <h1>¡Hola Mundo!</h1>
-    <p id="parrafoPrincipal">
+    <h1 id="textoTitulo">¡Hola Mundo!</h1>
+
+    <p id="parrafoPrimero">Mi nombres es Jaime y tengo 44 años de edad. Estudie la carrera de Administracion en la Universidad Nacional de San Luis Gonzaga de Ica. Actualmente estoy estudiando Programacion web
+    </p>
+
+    <p id="parrafoSegundo">
         Esta es mi primera página web. Estoy aprendiendo a usar HTML para la estructura
         y CSS para el estilo. ¡Es un camino muy emocionante!
     </p>
     <button id="cambiarTextoBtn">Modifica texto del parrago</button>
+    <button id="cambiarColotTitle">Cambia color del titulo</button>
 
     <script>
         const boton = document.getElementById('cambiarTextoBtn');
-        const parrafo = document.getElementById('parrafoPrincipal');
+        const botonTitle = document.getElementById('cambiarColotTitle');
+
+        const textoTitulo = document.getElementById('textoTitulo');
+        const parrafoPrimero = document.getElementById('parrafoPrimero');
+        const parrafoSegundo = document.getElementById('parrafoSegundo');
+
+        const textoOriginal = parrafoSegundo.textContent;
+        const colorOriginalTitle = textoTitulo.style.color;
+
+        let textoCambio = false;
+        let colorTitle = false;
 
         boton.addEventListener('click', ()=>{
-            parrafo.textContent= "¡Has cambiado el texto con JavaScript! ¡Es increíble la magia del DOM!";
+            if (textoCambio){
+                parrafoSegundo.textContent = textoOriginal;
+                parrafoSegundo.style.color = "blue";
+                textoCambio=false;
+                
+            }else{    
+                parrafoSegundo.textContent = "¡Has cambiado el texto con JavaScript! ¡Es increíble la magia del DOM!";
+                parrafoSegundo.style.color= "black";    
+                textoCambio = true;       
+                }
+        });
+        
+        botonTitle.addEventListener('click', () =>{
+            if (colorTitle){  
+                textoTitulo.style.color = colorOriginalTitle;  
+                colorTitle = false;
+            }else{
+                textoTitulo.style.color = "red";
+                colorTitle = true;     
+            }
         });
 
     </script>
